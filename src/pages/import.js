@@ -1,0 +1,8 @@
+export { default as About } from '../pages/about/About'
+export { default as Contactus } from '../pages/contactus/Contactus'
+export { default as Home } from '../pages/home/Home'
+export { default as Message } from '../pages/message/Message'
+export { default as Productdetails } from '../pages/productdetails/Productdetails'
+export { default as Products } from '../pages/products/Products'
+export { default as Services } from '../pages/services/Services'
+export { default as Vendor } from '../pages/vendor/Vendor'

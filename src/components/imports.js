@@ -1,0 +1,7 @@
+export { default as Footer } from '../components/footer/Footer'
+export { default as Forgetpassword } from '../components/forgetpassword/Forgetpassword'
+export { default as Hero } from '../components/hero/Hero'
+export { default as Login } from '../components/login/Login'
+export { default as Navbar } from '../components/navbar/Navbar'
+export { default as Resetpassword } from '../components/resetpassword/Resetpassword'
+export { default as Signup } from '../components/signup/Signup'
