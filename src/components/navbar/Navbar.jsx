@@ -27,7 +27,7 @@ const navLinks = [
 ];
 
 export const Sidebar = ({ isOpen, setOpenNav, openDropdown, setOpenDropdown, toggleDropdown }) => (
-  <div className={`flex flex-col pl-4 justify-center gap-10 text-[#094C41] text-[16px] h-screen w-[70%] sm:w-[50%] fixed right-0 top-0 z-50 transition-transform duration-500 bg-[#b4b3b3] ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+  <div className={`flex flex-col pl-4 justify-center gap-10 text-[#094C41] text-[16px] h-screen w-[70%] sm:w-[50%] fixed right-0 top-0 z-50 transition-transform duration-500 bg-[#fff] ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
     {/* Navigation Links with Dropdowns */}
     {navLinks.map((link, index) => (
       <div key={index} className="relative text-[16px] lg:text-[19px] font-[400]">
@@ -167,9 +167,9 @@ const Navbar = () => {
 
       {/* Hamburger Menu */}
       <div className={`menu z-50 fixed top-8 right-[2rem] flex md:hidden flex-col gap-2 cursor-pointer`} onClick={ToggleMenu}>
-        <p className={`block w-8 h-[3px] rounded-md bg-[#fff] transition-transform duration-500 ${openNav ? 'rotate-45 translate-y-[12px]' : ''}`}></p>
-        <p className={`block w-8 h-[3px] rounded-md bg-[#fff] transition-transform duration-500 ${openNav ? 'opacity-0' : 'opacity-100'}`}></p>
-        <p className={`block w-8 h-[3px] rounded-md bg-[#fff] transition-transform duration-500 ${openNav ? '-rotate-45 -translate-y-[8px]' : ''}`}></p>
+        <p className={`block w-8 h-[3px] rounded-md bg-[#5F3AFB] transition-transform duration-500 ${openNav ? 'rotate-45 translate-y-[12px]' : ''}`}></p>
+        <p className={`block w-8 h-[3px] rounded-md bg-[#5F3AFB] transition-transform duration-500 ${openNav ? 'opacity-0' : 'opacity-100'}`}></p>
+        <p className={`block w-8 h-[3px] rounded-md bg-[#5F3AFB] transition-transform duration-500 ${openNav ? '-rotate-45 -translate-y-[8px]' : ''}`}></p>
       </div>
 
       {/* Sidebar */}
