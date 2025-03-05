@@ -4,7 +4,7 @@ const Layout = () => {
   return (
     <div>
       <Navbar />
-      <section>{<Outlet />}</section>
+      <section className="mt-[5.5rem]">{<Outlet />}</section>
       <section><Footer /></section>
     </div>
   )

@@ -1,8 +1,12 @@
-import React from 'react'
-
+import { Hero, Footer, Categories } from "../../components/imports"
+import { Searchbar } from "@/components/hero/Hero"
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Hero />
+      <section className='flex items-center justify-center'><Searchbar /></section>
+      <Categories />
+    </div>
   )
 }
 

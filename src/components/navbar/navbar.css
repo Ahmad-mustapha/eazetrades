@@ -1,0 +1,18 @@
+.menu{
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    gap: 7px;
+}
+@media screen and (max-width: 768px) {
+    .menu{
+        display: flex;
+    }
+}
+.sidebar{
+    height: 100vh;
+    width: 100%;
+}
+.menu{
+    z-index: 10000;
+}
