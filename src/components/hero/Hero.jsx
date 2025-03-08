@@ -15,7 +15,7 @@ export const Searchbar = () =>(
 const Hero = () => {
   return (
     <section className="hero bg-[#EEEAFF] relative">
-      <div className="w-full sm:w-5/6 md:w-3/6 lg:w-4/6 flex flex-col gap-6 pl-6">
+      <div className="w-full sm:w-5/6 md:w-3/6 lg:w-4/6 flex flex-col gap-6 pl-0 sm:pl-6 lg:pl-10">
         <h2 className="font-[600] text-[45px] md:text-[50px] leading-[55px] text-[#333333]">Connecting <br /> sellers and buyers where convenience <br /> meet innovation</h2>
         <p className="text-[#696969] text-[25px]">World's largerst market place</p>
         <div className='w-full sm:w-[280px]'>

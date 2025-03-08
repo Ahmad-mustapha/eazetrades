@@ -1,4 +1,4 @@
-import { Hero, Footer, Categories } from "../../components/imports"
+import { Hero, Footer, Categories, Relatedsearch, Trendingproducts, Testimonials } from "../../components/imports"
 import { Searchbar } from "@/components/hero/Hero"
 const Home = () => {
   return (
@@ -6,6 +6,9 @@ const Home = () => {
       <Hero />
       <section className='flex items-center justify-center'><Searchbar /></section>
       <Categories />
+      <Relatedsearch />
+      <Trendingproducts />
+      <Testimonials />
     </div>
   )
 }
