@@ -38,7 +38,7 @@ const TrendingProducts = () => {
                                 className="w-full aspect-[3/2] object-cover rounded-[30px]"
                             />
                         {/* </div> */}
-                        <div className="p-4 space-y-2">
+                        <div className="py-4 space-y-2">
                             <div className="flex items-center justify-between">
                                 <h3 className="text-lg font-semibold text-[#5F3AFB]">Fashion</h3>
                                 <div className="text-2xl font-bold text-[#000000]">₦20,000</div>

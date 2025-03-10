@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { FiSearch } from "react-icons/fi";
 import Logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { Searchbarnav } from '../imports';
 import './navbar.css';
 
 const navLinks = [
@@ -97,21 +99,14 @@ const Navbar = () => {
     <nav className="mx-auto px-8 py-4 h-[5.5rem] flex justify-between items-center gap-4 bg-[#EEEAFF] border-b-[1px] border-slate-300 fixed top-0 left-0 w-full z-30">
       {/* Logo */}
       <div className="flex items-center gap-2">
-        <div className="w-[2rem]">
+        <div className="w-[2.3rem] :w-[2rem]">
           <img className="w-full" src={Logo} alt="Logo" />
         </div>
-        <div className="text-2xl font-bold text-gray-800">EAZETRADES</div>
+        <div className="hidden sm:flex text-2xl font-bold text-gray-800">EAZETRADES</div>
       </div>
 
       {/* Search Bar */}
-      <div className="w-[250px] mr-14 md:w-[342px]">
-        <input
-          type="text"
-          placeholder="Search for product"
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-      </div>
-
+      <Searchbarnav />
       {/* Navigation Links */}
       <div className="hidden md:flex items-center gap-[11px] lg:gap-[28px]">
         {/* Navigation Links with Dropdowns */}
@@ -166,10 +161,10 @@ const Navbar = () => {
       </div>
 
       {/* Hamburger Menu */}
-      <div className={`menu z-50 fixed top-8 right-[2rem] flex md:hidden flex-col gap-2 cursor-pointer`} onClick={ToggleMenu}>
-        <p className={`block w-8 h-[3px] rounded-md bg-[#5F3AFB] transition-transform duration-500 ${openNav ? 'rotate-45 translate-y-[12px]' : ''}`}></p>
-        <p className={`block w-8 h-[3px] rounded-md bg-[#5F3AFB] transition-transform duration-500 ${openNav ? 'opacity-0' : 'opacity-100'}`}></p>
-        <p className={`block w-8 h-[3px] rounded-md bg-[#5F3AFB] transition-transform duration-500 ${openNav ? '-rotate-45 -translate-y-[8px]' : ''}`}></p>
+      <div className={`menu z-50 fixed right-[2rem] flex md:hidden flex-col gap-2 cursor-pointer bg-[#5F3AFB] rounded-full h-[45px] justify-center items-center w-[45px]`} onClick={ToggleMenu}>
+        <p className={`block w-8 h-[3px] rounded-md bg-[#fff] transition-transform duration-500 ${openNav ? 'rotate-45 translate-y-[12px]' : ''}`}></p>
+        <p className={`block w-8 h-[3px] rounded-md bg-[#fff] transition-transform duration-500 ${openNav ? 'opacity-0' : 'opacity-100'}`}></p>
+        <p className={`block w-8 h-[3px] rounded-md bg-[#fff] transition-transform duration-500 ${openNav ? '-rotate-45 -translate-y-[8px]' : ''}`}></p>
       </div>
 
       {/* Sidebar */}
