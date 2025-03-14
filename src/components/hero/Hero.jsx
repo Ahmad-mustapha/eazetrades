@@ -1,5 +1,9 @@
+import { useEffect, useState } from 'react';
 import './hero.css'
 import { FiSearch } from "react-icons/fi";
+import Firstimage from '../../assets/hero.png'
+import secimage from '../../assets/heroimg3.jpg'
+
 
 
 export const Searchbar = () =>(
@@ -13,8 +17,26 @@ export const Searchbar = () =>(
 
 
 const Hero = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const images = [
+    Firstimage,
+    secimage,
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 4000); // Change background every 2 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [images.length]);
+
   return (
-    <section className="hero bg-[#EEEAFF] relative min-h-[600px] sm:min-h-[500px]">
+    <section 
+    style={{
+      backgroundImage: `url(${images[currentIndex]})`,
+    }}
+    className="hero bg-[#EEEAFF] relative min-h-[600px] sm:min-h-[500px]">
       <div className="w-full sm:w-5/6 md:w-3/6 lg:w-4/6 flex flex-col gap-6 pl-0 sm:pl-6 lg:pl-14 pt-8 md:pt-16 h-full">
         <h2 className="font-[600] text-[38px] sm:text-[45px] md:text-[50px] leading-[55px] text-[#333333]">Connecting <br /> sellers and buyers where convenience <br /> meet innovation</h2>
         <p className="text-[#696969] text-[25px]">World's largerst market place</p>
