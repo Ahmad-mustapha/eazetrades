@@ -10,7 +10,7 @@ export const Searchbar = () =>(
   <div className='bg-white absolute rounded-lg px-8 py-6 w-5/6 shadow-lg z-20'>
     <input 
     className='w-full px-4 py-4 border border-gray-300 rounded-[100px] focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm'
-    type="text" />
+    type="text" />WW
     <span ><FiSearch className='bg-[#5F3AFB] rounded-full w-11 h-11 p-2 absolute right-10 top-[30px] text-white'/></span>
   </div>
 )

@@ -10,3 +10,5 @@ export { default as Relatedsearch } from '../components/relatedsearch/Relatedsea
 export { default as Trendingproducts } from '../components/trendingproducts/Trendingproducts'
 export { default as Testimonials } from '../components/testimonials/Testimonials'
 export { default as Searchbarnav } from '../components/navbar/Searchbarnav'
+export { default as Faq } from '../components/faq/Faq'
+export { default as Team } from '../components/team/Team'

@@ -107,7 +107,7 @@ const Footer = () => {
           </form>
         </div>
       </section>
-      <section className="mt-12 flex items-center justify-between border-t-2 border-slate-300 pt-10 flex-wrap sm:flex-nowrap">
+      <section className="mt-12 flex gap-8 items-center justify-between border-t-2 border-slate-300 pt-10 flex-col md:flex-row">
         <div className="w-[2rem]"><img className="w-full" src={Logo} alt="" /></div>
         <ul className="flex items-center gap-4 font-[500] text-[14px]">
           <li><Link>Terms</Link></li>
