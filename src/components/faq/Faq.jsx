@@ -50,7 +50,7 @@ const toggleFaq = (index) =>{
 
 function Faq() {
   return (
-    <div id='faqs' className='p-10 font-sans flex justify-between space-x-10 space-y-4 lg:flex-row flex-col overflow-x-hidden mt-10 bg-[#F9F7FF]'>
+    <div id='faqs' className='p-4 md:p-14 font-sans flex justify-between space-x-10 space-y-4 lg:flex-row flex-col overflow-x-hidden mt-10 bg-[#F9F7FF]'>
       <div className='2/4'><h2 className='text-[30px] md:text-[45px] font-[600] text-[#333333]'>Frequently asked question</h2></div>
       <div data-aos="fade-left" className='w-full md:w-4/6  lg:w-4/6'>
         <Eachfaq />

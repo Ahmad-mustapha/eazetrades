@@ -30,9 +30,9 @@ const information = [
 ];
 
 const company = [
-  { id: 1, text: 'About us', link: '' },
+  { id: 1, text: 'About us', link: '/about-us' },
   { id: 2, text: 'Careers', link: '' },
-  { id: 3, text: 'Contact us', link: '' },
+  { id: 3, text: 'Contact us', link: '/contact-us' },
   { id: 4, text: 'Lift Media', link: '' },
 ];
 

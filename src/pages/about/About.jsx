@@ -4,7 +4,7 @@ import Satisfaction from '../../assets/satifactionimg.png'
 import Discoveryimg from '../../assets/discoveryItems.png'
 import Tailorimg from '../../assets/tailoredItems.png'
 import { AiOutlineCheck } from "react-icons/ai";
-import { Faq } from '@/components/imports';
+import { Faq, Team } from '@/components/imports';
 
 
 const UniqueData = [
@@ -62,7 +62,10 @@ const About = () => {
         <p className='text-[20px] md:text-[26px] font-[400] '>We strive to provide excellent customer service and ensure that <br /> every purchase meets your expectations.</p>
       </section>
       <section>
-      <Faq />
+        <Faq />
+      </section>
+      <section>
+        <Team />
       </section>
     </div>
   )

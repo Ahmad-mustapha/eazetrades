@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FiSearch } from "react-icons/fi";
 import Logo from '../../assets/logo.png';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { useLocation } from 'react-router-dom';
 import { Searchbarnav } from '../imports';
 import './navbar.css';
@@ -33,28 +33,37 @@ export const Sidebar = ({ isOpen, setOpenNav, openDropdown, setOpenDropdown, tog
     {/* Navigation Links with Dropdowns */}
     {navLinks.map((link, index) => (
       <div key={index} className="relative text-[16px] lg:text-[19px] font-[400]">
-        <button
-          onClick={() => link.dropdown && toggleDropdown(link.text)} // Use the toggleDropdown function
-          className="text-gray-700 hover:text-blue-600 flex items-center"
-        >
-          {link.text}
-          {link.dropdown && (
-            <svg
-              className="w-4 h-4 ml-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          )}
-        </button>
+        {link.dropdown ? (
+          <button
+            onClick={() => link.dropdown && toggleDropdown(link.text)} // Use the toggleDropdown function
+            className="text-gray-700 hover:text-blue-600 flex items-center"
+          >
+            {link.text}
+            {link.dropdown && (
+              <svg
+                className="w-4 h-4 ml-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            )}
+          </button>
+        ) : (
+          <Link
+            to={link.url} // Use the Link component for non-dropdown links
+            className="text-gray-700 hover:text-blue-600"
+          >
+            {link.text}
+          </Link>
+        )}
 
         {/* Dropdown Menu */}
         {link.dropdown && openDropdown === link.text && (
@@ -112,28 +121,37 @@ const Navbar = () => {
         {/* Navigation Links with Dropdowns */}
         {navLinks.map((link, index) => (
           <div key={index} className="relative text-[16px] lg:text-[19px] font-[400]">
-            <button
-              onClick={() => link.dropdown && toggleDropdown(link.text)}
-              className="text-gray-700 hover:text-blue-600 flex items-center"
-            >
-              {link.text}
-              {link.dropdown && (
-                <svg
-                  className="w-4 h-4 ml-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              )}
-            </button>
+            {link.dropdown ? (
+              <button
+                onClick={() => link.dropdown && toggleDropdown(link.text)}
+                className="text-gray-700 hover:text-blue-600 flex items-center"
+              >
+                {link.text}
+                {link.dropdown && (
+                  <svg
+                    className="w-4 h-4 ml-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                )}
+              </button>
+            ) : (
+              <Link
+                to={link.url} // Use the Link component for non-dropdown links
+                className="text-gray-700 hover:text-blue-600"
+              >
+                {link.text}
+              </Link>
+            )}
 
             {/* Dropdown Menu */}
             {link.dropdown && openDropdown === link.text && (
@@ -141,7 +159,7 @@ const Navbar = () => {
                 {link.dropdown.map((item, idx) => (
                   <Link
                     key={idx}
-                    to={`/${link.text.toLowerCase()}/${item.slug}`} // Navigate to the correct route
+                    to={`/${link.text.toLowerCase()}/${item.slug || item.url}`} // Navigate to the correct route
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                   >
                     {item.name}

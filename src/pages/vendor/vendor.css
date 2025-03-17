@@ -1,0 +1,23 @@
+.vendor{
+    background-image: url('../../assets/vendorheroimg.png');
+    width: 100%;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 4rem 1.5rem;
+    transition: background-image 1s ease-in-out; 
+}
+.services{
+    background-image: url('../../assets/servicecurve.png');
+    /* width: 50%; */
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 4rem 1.5rem;
+}
+
+@media screen and (max-width: 700px) {
+    .services{
+        background-repeat: repeat;
+    }
+}
