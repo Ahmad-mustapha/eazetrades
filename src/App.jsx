@@ -3,12 +3,14 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './layout/Layout'
 import { About, Home, Contactus, Message, Productdetails, Vendor } from './pages/import'
+import ScrollToTop from './components/randoms/ScrollToTop'
 
 function App() {
 
   return (
     <>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path='/' element={<Layout />}>
               <Route index element={<Home />} />

@@ -47,7 +47,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {product.map((item) => (
                 <li key={item.id}>
-                  <Link className="text-slate-500 hover:text-[#5F3AFB]" href={item.link}>{item.text}</Link>
+                  <Link className="text-slate-500 hover:text-[#5F3AFB]" to={item.link}>{item.text}</Link>
                 </li>
               ))}
             </ul>
@@ -58,7 +58,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {service.map((city) => (
                 <li key={city.id}>
-                  <Link className="text-slate-500 hover:text-[#5F3AFB]" href={city.link}>{city.text}</Link>
+                  <Link className="text-slate-500 hover:text-[#5F3AFB]" to={city.link}>{city.text}</Link>
                 </li>
               ))}
             </ul>
@@ -69,7 +69,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {information.map((item) => (
                 <li key={item.id}>
-                  <Link className="text-slate-500 hover:text-[#5F3AFB]" href={item.link}>{item.text}</Link>
+                  <Link className="text-slate-500 hover:text-[#5F3AFB]" to={item.link}>{item.text}</Link>
                 </li>
               ))}
             </ul>
@@ -80,7 +80,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {company.map((item) => (
                 <li key={item.id}>
-                  <Link className="text-slate-500 hover:text-[#5F3AFB]" href={item.link}>{item.text}</Link>
+                  <Link className="text-slate-500 hover:text-[#5F3AFB]" to={item.link}>{item.text}</Link>
                 </li>
               ))}
             </ul>

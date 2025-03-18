@@ -58,6 +58,7 @@ export const Sidebar = ({ isOpen, setOpenNav, openDropdown, setOpenDropdown, tog
           </button>
         ) : (
           <Link
+            onClick={() => setOpenNav(false)}
             to={link.url} // Use the Link component for non-dropdown links
             className="text-gray-700 hover:text-blue-600"
           >
@@ -84,7 +85,9 @@ export const Sidebar = ({ isOpen, setOpenNav, openDropdown, setOpenDropdown, tog
 
     {/* Get Started Button */}
     <div className='w-[135px]'>
-      <button className="bg-[#5F3AFB] w-full text-white px py-2 rounded-[100px] text-[16px] lg:text-[19px]">
+      <button 
+      onClick={() => setOpenNav(false)}
+      className="bg-[#5F3AFB] w-full text-white px py-2 rounded-[100px] text-[16px] lg:text-[19px]">
         Get started
       </button>
     </div>
@@ -107,12 +110,12 @@ const Navbar = () => {
   return (
     <nav className="mx-auto px-8 py-4 h-[5.5rem] flex justify-between items-center gap-4 bg-[#EEEAFF] border-b-[1px] border-slate-300 fixed top-0 left-0 w-full z-30">
       {/* Logo */}
-      <div className="flex items-center gap-2">
+      <Link to='/' className="flex items-center gap-2">
         <div className="w-[2.3rem] :w-[2rem]">
           <img className="w-full" src={Logo} alt="Logo" />
         </div>
         <div className="hidden sm:flex text-2xl font-bold text-gray-800">EAZETRADES</div>
-      </div>
+      </Link>
 
       {/* Search Bar */}
       <Searchbarnav />
