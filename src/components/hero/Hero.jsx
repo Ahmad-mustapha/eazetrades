@@ -26,7 +26,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000); // Change background every 2 seconds
+    }, 13000); // Change background every 2 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, [images.length]);

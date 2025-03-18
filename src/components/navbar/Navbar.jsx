@@ -85,11 +85,12 @@ export const Sidebar = ({ isOpen, setOpenNav, openDropdown, setOpenDropdown, tog
 
     {/* Get Started Button */}
     <div className='w-[135px]'>
-      <button 
-      onClick={() => setOpenNav(false)}
-      className="bg-[#5F3AFB] w-full text-white px py-2 rounded-[100px] text-[16px] lg:text-[19px]">
+      <Link 
+        to='/signup'
+        onClick={() => setOpenNav(false)}
+        className="bg-[#5F3AFB] w-full text-white px-4 py-2 rounded-[100px] text-[16px] lg:text-[19px]">
         Get started
-      </button>
+      </Link>
     </div>
   </div>
 );
@@ -175,9 +176,9 @@ const Navbar = () => {
 
         {/* Get Started Button */}
         <div className='w-[135px]'>
-          <button className="bg-[#5F3AFB] w-full text-white px py-2 rounded-[100px] text-[16px] lg:text-[19px]">
+          <Link to='/signup' className="bg-[#5F3AFB] w-full text-white px-4 py-2 rounded-[100px] text-[16px] lg:text-[19px]">
             Get started
-          </button>
+          </Link>
         </div>
       </div>
 

@@ -1,8 +1,7 @@
-import { useState } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './layout/Layout'
-import { About, Home, Contactus, Message, Productdetails, Vendor } from './pages/import'
+import { About, Home, Contactus, Message, Productdetails, Vendor, Signup, Login, Forgetpassword } from './pages/import'
 import ScrollToTop from './components/randoms/ScrollToTop'
 
 function App() {
@@ -21,6 +20,9 @@ function App() {
               <Route path='/product-details/:id' element={<Productdetails />} />
               {/* <Route path='/products' element={<Products />} /> */}
             </Route>
+            <Route path='/signup' element={<Signup />}/>
+            <Route path='/login' element={<Login />}/>
+            <Route path='/forgetpassword' element={<Forgetpassword />}/>
           </Routes>
         </BrowserRouter>
     </>
