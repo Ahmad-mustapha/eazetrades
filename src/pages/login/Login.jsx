@@ -24,7 +24,7 @@ const handleSubmit = (e) => {
   return (
     <div className="flex items-center justify-center bg-gray-100 py-10 h-screen">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h1 className="text-2xl font-bold mb-6 text-center">Sign In</h1>
+        <h1 className="text-2xl font-bold mb-6 text-center">Sign in</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block text-sm font-medium mb-2" htmlFor="email">

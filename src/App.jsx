@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './layout/Layout'
 import { About, Home, Contactus, Message, Productdetails, Vendor, Signup, Login, Forgetpassword } from './pages/import'
 import ScrollToTop from './components/randoms/ScrollToTop'
+import Resetpassword from './pages/forgetpassword/Resetpassword'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
             <Route path='/signup' element={<Signup />}/>
             <Route path='/login' element={<Login />}/>
             <Route path='/forgetpassword' element={<Forgetpassword />}/>
+            <Route path='/resetpassword' element={<Resetpassword />}/>
           </Routes>
         </BrowserRouter>
     </>

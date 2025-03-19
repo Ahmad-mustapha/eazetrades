@@ -129,7 +129,7 @@ const SignUp = () => {
               </label>
             </div>
           </div>
-          <button className="w-full bg-[#5F3AFB] rounded-[100px] py-3">
+          <button className="w-full bg-[#5F3AFB] rounded-[100px] py-3 text-white font-[500]">
             Sign up
           </button>
         </form>

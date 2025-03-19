@@ -7,9 +7,9 @@ const Searchbarnav = () => {
   return (
     <div className={`box flex items-center cursor-pointer rounded-full bg-white mr-18 lg:mr-0 ${isExpanded? 'bg-white': ''}`}>
       {/* Search Icon (Always Visible) */}
-      <a href="#" className={`bg-[#5F3AFB] lg:bg-white p-3.5 px-3.5 rounded-full ${isExpanded ? 'bg-white': ''}`} onClick={() => setIsExpanded(!isExpanded)}>
+      <button className={`bg-[#5F3AFB] text-slate-100 lg:bg-white p-3 px-3 rounded-full ${isExpanded ? 'bg-white': ''}`} onClick={() => setIsExpanded(!isExpanded)}>
         <FiSearch className={`text-[#] text-[1.3rem] ${isExpanded? 'text-slate-400': ''}`} />
-      </a>
+      </button>
 
       {/* Input Field (Visible on md screens and above or when expanded on small screens) */}
       <div
