@@ -11,3 +11,6 @@ a {
 button {
   cursor: pointer;
 }
+.color span{
+  @apply w-10 h-10
+}

@@ -1,89 +1,44 @@
 import React, { useState } from 'react';
+import { RxCross2 } from "react-icons/rx";
+import { IoFilterSharp } from "react-icons/io5";
 
 const FilterModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-6 rounded-lg w-11/12 max-w-md">
-        <h2 className="text-xl font-bold mb-4">Filter</h2>
-
-        {/* Price Filter */}
-        <div className="mb-4">
-          <h3 className="text-lg font-semibold mb-2">Filter by Price</h3>
-          <div className="space-y-2">
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              <span>50,000 NGN</span>
-            </label>
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              <span>200,000 NGN</span>
-            </label>
-          </div>
+    <div className="fixed right-0 -bottom-10 z-50 py-15 px-6 bg-white w-[500px] h-[400px] flex flex-col gap-4 overflow-y-scroll text-[#333333]">
+      <RxCross2 onClick={onClose} className='absolute top-4 right-4 text-[1.5rem]'/>
+      <p className='text-[25px]'>Category</p>
+      <div className='flex items-center flex-wrap gap-2'>
+        <p className='border-[1px] border-[#333333] rounded-xl p-2 px-3'>Fashion</p>
+        <p className='border-[1px] border-[#333333] rounded-xl p-2 px-3'>Sport,art,outdoors</p>
+        <p className='border-[1px] border-[#333333] rounded-xl p-2 px-3'>Pet</p>
+        <p className='border-[1px] border-[#333333] rounded-xl p-2 px-3'>Health and lifestyle</p>
+      </div>
+      <p className='text-[25px]'>Fashion by price</p>
+      <div className='flex items-center gap-2'>
+        <p className='border-[1px] border-[#333333] rounded-xl p-2 px-3'>Clothes</p>
+        <p className='border-[1px] border-[#333333] rounded-xl p-2 px-3'>Shoes</p>
+        <p className='border-[1px] border-[#333333] rounded-xl p-2 px-3'>Glasses</p>
+        <p className='border-[1px] border-[#333333] rounded-xl p-2 px-3'>Accessories</p>
+      </div>
+      <div>
+        <p className='text-[25px]'>Filter by price</p>
+        <div>bene</div>
+        <button className='bg-[#5F3AFB] p-1 px-4 text-white rounded-[100px]'>Filter</button>
+      </div>
+      <div>
+        <p>Color</p>
+        <div className='flex items-center gap-3 color mt-2'>
+          <span className='bg-red-500'></span><span className='bg-black'></span><span className='bg-green-500'></span>
         </div>
-
-        {/* Size Filter */}
-        <div className="mb-4">
-          <h3 className="text-lg font-semibold mb-2">Size</h3>
-          <div className="space-y-2">
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              <span>Size 7</span>
-            </label>
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              <span>Size 8</span>
-            </label>
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              <span>Size 9</span>
-            </label>
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              <span>Size 10</span>
-            </label>
-          </div>
-        </div>
-
-        {/* Color Filter */}
-        <div className="mb-4">
-          <h3 className="text-lg font-semibold mb-2">Color</h3>
-          <div className="space-y-2">
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              <span>Red</span>
-            </label>
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              <span>Blue</span>
-            </label>
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              <span>Green</span>
-            </label>
-            <label className="flex items-center">
-              <input type="checkbox" className="mr-2" />
-              <span>Black</span>
-            </label>
-          </div>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="mt-6 flex justify-end space-x-4">
-          <button
-            onClick={onClose}
-            className="px-4 py-2 bg-gray-300 rounded-md hover:bg-gray-400"
-          >
-            Close
-          </button>
-          <button
-            onClick={onClose}
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-          >
-            Apply Filters
-          </button>
-        </div>
+      </div>
+      <p className='text-[25px]'>Sizes</p>
+      <div className='flex items-center gap-2'>
+        <p className='border-[1px] border-[#333333] rounded-xl p-2 px-3'>Size 7</p>
+        <p className='border-[1px] border-[#333333] rounded-xl p-2 px-3'>Size 6</p>
+        <p className='border-[1px] border-[#333333] rounded-xl p-2 px-3'>Size 8</p>
+        <p className='border-[1px] border-[#333333] rounded-xl p-2 px-3'>Size 10</p>
       </div>
     </div>
   );
@@ -93,13 +48,14 @@ export const Filterbutton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div>
+    <div className='relative text-[20px] flex'>
       {/* Filter Button */}
       <button
-        onClick={() => setIsModalOpen(true)}
-        className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+        onClick={() => setIsModalOpen(!isModalOpen)}
+        className="flex items-center gap-2 px-4 py-2 bg-[#F2F2F2] text-[#696969] rounded-md"
       >
         Filter
+        <IoFilterSharp />
       </button>
 
       {/* Filter Modal */}

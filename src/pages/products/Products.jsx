@@ -22,7 +22,7 @@ export const Products = ({category}) => {
     
     const location = useLocation()
     return (
-        <section className="py-12 px-4 sm:px-6 lg:px-8">
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[#f7f7f7]">
             {location.pathname.includes(category) &&(
                 <div className='flex items-center gap-4'>
                     <p className='flex items-center gap-4'><Link to='/'>Home</Link> <MdKeyboardDoubleArrowRight className='text-[1.5rem] font-[300]' /></p>
@@ -30,7 +30,7 @@ export const Products = ({category}) => {
                     <p className='capitalize'>{category}</p>
                 </div>
             )}
-            <div>
+            <div className='relative flex items-center justify-between'>
                 <h2 className="font-[500] text-[32px] lg:text-[40px] xl:text-[48px] text-[#333333] mb-[45px] mt-[20px] capitalize">{category}</h2>
                 <Filterbutton />
             </div>
