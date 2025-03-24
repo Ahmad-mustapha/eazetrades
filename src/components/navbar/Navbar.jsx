@@ -109,6 +109,7 @@ export const Sidebar = ({ isOpen, setOpenNav, openDropdown, setOpenDropdown, tog
                 >
                   <Link
                     to={`/${link.text.toLowerCase()}/${item.slug}`}
+                    onClick={() => setOpenNav(false)}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 w-full text-left"
                   >
                     {item.name}
@@ -224,6 +225,7 @@ const Navbar = () => {
                   >
                     <Link
                       to={`/${link.text.toLowerCase()}/${item.slug}`}
+                      onClick={() => setOpenNav(false)}
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg w-full text-left"
                     >
                       {item.name}

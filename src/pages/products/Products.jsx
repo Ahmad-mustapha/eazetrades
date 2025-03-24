@@ -5,21 +5,34 @@ import crocs from '../../assets/crocs.png';
 import watch from '../../assets/watch.png';
 import headphone from '../../assets/headphone.png';
 import speaker from '../../assets/speaker.png';
-// import stoolm from "../../assets/stool mobile.png"
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { FaLocationDot } from "react-icons/fa6";
 import { LuShoppingCart } from "react-icons/lu";
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { Filterbutton } from '@/components/randoms/Filterbutton';
 
 const pics = [stool, bootle, crocs, watch, headphone, speaker];
 
-export const Products = () => {
+export const Products = ({category}) => {
+    console.log(category);
+    
+    const location = useLocation()
     return (
         <section className="py-12 px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-                <h1 className="font-bold text-[40px] leading-[131.8%] text-[#333333] mb-[60px]">Products</h1>
+            {location.pathname.includes(category) &&(
+                <div className='flex items-center gap-4'>
+                    <p className='flex items-center gap-4'><Link to='/'>Home</Link> <MdKeyboardDoubleArrowRight className='text-[1.5rem] font-[300]' /></p>
+                    <p className='flex items-center gap-4'>Category <MdKeyboardDoubleArrowRight className='text-[1.5rem] font-[300]' /></p>
+                    <p className='capitalize'>{category}</p>
+                </div>
+            )}
+            <div>
+                <h2 className="font-[500] text-[32px] lg:text-[40px] xl:text-[48px] text-[#333333] mb-[45px] mt-[20px] capitalize">{category}</h2>
+                <Filterbutton />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 mx-auto">
                 {pics.map((p, i) => (
@@ -29,7 +42,6 @@ export const Products = () => {
                             <span className="absolute top-8 right-8 bg-[#FFFFFF] text-[#5F3AFB] font-bold px-2 py-1 rounded-full text-xs">
                                 Premium Ad
                             </span>
-
                             <img
                                 src={p}
                                 width={600}
