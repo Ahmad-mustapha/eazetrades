@@ -5,7 +5,7 @@ import { About, Home, Contactus, Message, Productdetails, Vendor, Signup, Login,
 import ScrollToTop from './components/randoms/ScrollToTop'
 import Resetpassword from './pages/forgetpassword/Resetpassword'
 import { Products } from './pages/products/Products'
-// import { navLinks } from './components/navbar/Navbar'
+
 const navLinks = [
   {
     text: 'Products',
@@ -53,44 +53,66 @@ const navLinks = [
       },
     ],
   },
-  { text: 'Vendors', url: '/vendors' }, // No dropdown
+  { text: 'Vendors', url: '/vendors' },
 ];
-function App() {
 
+function App() {
   return (
-    <>
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path='/' element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path='/about-us' element={<About />} />
-              <Route path='/vendors' element={<Vendor />} />
-              <Route path='/contact-us' element={<Contactus />} />
-              <Route path='/message' element={<Message />} />
-              <Route path='/product-details/:id' element={<Productdetails />} />
-              {/* <Route path='/products' element={<Products />} /> */}
-              {/* Dynamically generate routes for categories and subcategories */}
-              {navLinks.map((link) => {
-                if (link.dropdown) {
-                  return link.dropdown.map((category) => (
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path='/about-us' element={<About />} />
+          <Route path='/vendors' element={<Vendor />} />
+          <Route path='/contact-us' element={<Contactus />} />
+          <Route path='/message' element={<Message />} />
+          
+          {/* Product Details Route */}
+          <Route 
+            path='/product-details/:id' 
+            element={<Productdetails />} 
+          />
+          
+          {/* Products Routes */}
+          <Route path='/products' element={<Products />} />
+          
+          {/* Dynamic Category Routes */}
+          {navLinks.map((link) => {
+            if (link.dropdown) {
+              return [
+                // Main category route (e.g., /products/fashion)
+                <Route
+                  key={link.slug}
+                  path={`/${link.text.toLowerCase()}/:category`}
+                  element={<Products />}
+                />,
+                // Subcategory routes (e.g., /products/fashion/shoes)
+                ...link.dropdown.flatMap(category => (
+                  category.children?.map(subCategory => (
                     <Route
-                      key={category.slug}
-                      path={`/${link.text.toLowerCase()}/${category.slug}`}
-                      element={<Products category={category.slug} />}
+                      key={`${category.slug}-${subCategory.slug}`}
+                      path={`/${link.text.toLowerCase()}/${category.slug}/${subCategory.slug}`}
+                      element={<Products category={subCategory.slug} />}
                     />
-                  ));
-                }
-                return null;
-              })}
-            </Route>
-            <Route path='/signup' element={<Signup />}/>
-            <Route path='/login' element={<Login />}/>
-            <Route path='/forgetpassword' element={<Forgetpassword />}/>
-            <Route path='/resetpassword' element={<Resetpassword />}/>
-          </Routes>
-        </BrowserRouter>
-    </>
+                  )) || []
+                ))
+              ];
+            }
+            return null;
+          })}
+        </Route>
+        
+        {/* Auth Routes */}
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/forgetpassword' element={<Forgetpassword />} />
+        <Route path='/resetpassword' element={<Resetpassword />} />
+        
+        {/* 404 Not Found Route - Add this at the end */}
+        <Route path='*' element={<div>404 Not Found</div>} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
