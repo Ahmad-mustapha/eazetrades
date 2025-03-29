@@ -38,18 +38,18 @@ const navLinks = [
       {
         name: 'Service 1',
         slug: 'service-1',
-        children: [
-          { name: 'Sub-Service 1', slug: 'sub-service-1' },
-          { name: 'Sub-Service 2', slug: 'sub-service-2' },
-        ],
+        // children: [
+        //   { name: 'Sub-Service 1', slug: 'sub-service-1' },
+        //   { name: 'Sub-Service 2', slug: 'sub-service-2' },
+        // ],
       },
       {
         name: 'Service 2',
         slug: 'service-2',
-        children: [
-          { name: 'Sub-Service 3', slug: 'sub-service-3' },
-          { name: 'Sub-Service 4', slug: 'sub-service-4' },
-        ],
+        // children: [
+        //   { name: 'Sub-Service 3', slug: 'sub-service-3' },
+        //   { name: 'Sub-Service 4', slug: 'sub-service-4' },
+        // ],
       },
     ],
   },

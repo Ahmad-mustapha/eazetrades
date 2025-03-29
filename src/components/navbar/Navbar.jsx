@@ -38,18 +38,18 @@ const navLinks = [
       {
         name: 'Service 1',
         slug: 'service-1',
-        children: [
-          { name: 'Sub-Service 1', slug: 'sub-service-1' },
-          { name: 'Sub-Service 2', slug: 'sub-service-2' },
-        ],
+        // children: [
+        //   { name: 'Sub-Service 1', slug: 'sub-service-1' },
+        //   { name: 'Sub-Service 2', slug: 'sub-service-2' },
+        // ],
       },
       {
         name: 'Service 2',
         slug: 'service-2',
-        children: [
-          { name: 'Sub-Service 3', slug: 'sub-service-3' },
-          { name: 'Sub-Service 4', slug: 'sub-service-4' },
-        ],
+        // children: [
+        //   { name: 'Sub-Service 3', slug: 'sub-service-3' },
+        //   { name: 'Sub-Service 4', slug: 'sub-service-4' },
+        // ],
       },
     ],
   },
@@ -123,6 +123,7 @@ export const Sidebar = ({ isOpen, setOpenNav, openDropdown, setOpenDropdown, tog
                           key={childIdx}
                           to={`/${link.text.toLowerCase()}/${item.slug}/${child.slug}`}
                           className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                          onClick={() => setOpenDropdown(null)}
                         >
                           {child.name}
                         </Link>
@@ -239,6 +240,7 @@ const Navbar = () => {
                             key={childIdx}
                             to={`/${link.text.toLowerCase()}/${item.slug}/${child.slug}`}
                             className="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg"
+                            onClick={() => setOpenDropdown(null)}
                           >
                             {child.name}
                           </Link>
