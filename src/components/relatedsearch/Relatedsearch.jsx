@@ -104,9 +104,9 @@ const Relatedsearch = () => {
     );
     return (
         <section className="my-[50px] md::my-[100px]">
-            <div className="text-center">
+            {/* <div className="text-center">
                 <h1 className="font-semibold text-[32px] md:text-5xl mb-10 text-[#000000]">Related Searches</h1>
-            </div>
+            </div> */}
             <div className="mt-0">
                 <Carousel
                     plugins={[plugin.current]}

@@ -43,7 +43,7 @@ const Message = () => {
       </header>
       <main className="mt-20">
         <div className="flex items-end justify-end gap-2">
-          <p className="w-3/6 bg-[#5F3AFB] p-4 rounded-l-xl rounded-tr-xl">Hi Shammah. I want to buy the purple speaker that I saw on your website profile but I have a couple of questions: How long has the speaker been, the life span and all???</p>
+          <p className="w-3/6 bg-[#5F3AFB] text-[#fff] p-4 rounded-l-xl rounded-tr-xl">Hi Shammah. I want to buy the purple speaker that I saw on your website profile but I have a couple of questions: How long has the speaker been, the life span and all???</p>
           <div className="bg-slate-300 rounded-full w-[40px] h-[40px]"><img className="w-full h-full object-cover rounded-full" src={Seller} alt="" /></div>
         </div>
         <div className="flex items-end justify-start gap-2 mt-10">
@@ -59,7 +59,7 @@ const Message = () => {
             </div>
             <div className="w-full relative">
               <input 
-              className="w-full rounded-[100px] p-2 px-10 bg-[#ddd]"
+              className="w-full rounded-[100px] p-2 px-10 bg-[#fff]"
               type="text" />
               <button><IoMdMic className="text-[22px] absolute right-2 top-2"/></button>
               <button><RxLetterCaseCapitalize className="text-[22px] absolute left-2 top-2"/></button>

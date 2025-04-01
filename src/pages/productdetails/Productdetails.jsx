@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { Navbar, Footer } from '@/components/imports';
+import { Navbar } from '@/components/imports';
 import './productdetails.css';
 import Camera from '../../assets/camera.png';
 import { Link } from 'react-router-dom';
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import av1 from "../../assets/Av2.png"
+import av2 from "../../assets/Av1.png"
+import { Safetytips } from '@/components/comment/Comment';
+import Comment from '@/components/comment/Comment';
+import { Relatedsearch } from '@/components/imports';
+
+
 // Mock data - in a real app, you would fetch this from an API
 const mockProducts = [
   {
@@ -28,6 +36,8 @@ const mockProducts = [
 const Productdetails = () => {
   const { id } = useParams();
   const location = useLocation();
+  console.log(location.pathname);
+  
   const [product, setProduct] = useState(null);
   const [mainImage, setMainImage] = useState(Camera);
 
@@ -58,9 +68,22 @@ const Productdetails = () => {
   ];
 
   return (
-    <div>
+    <div className='bg-[#f9f7ff]'>
       <Navbar />
       <div className="container mx-auto p-4 md:p-8 mt-20">
+        {location.pathname.includes('product-details') && (
+        <div className='flex items-center gap-2 my-6 text-sm md:text-base'>
+          <Link to='/' className='hover:underline text-gray-600 hover:text-gray-800'>Home</Link>
+          <span className='text-gray-400'>|</span>
+          <Link to='/products' className='hover:underline text-gray-600 hover:text-gray-800'>Products</Link>
+          <span className='text-gray-400'>|</span>
+          <Link to={`/products/${product.category.toLowerCase()}`} className='hover:underline text-gray-600 hover:text-gray-800 capitalize'>
+              {product.category}
+          </Link>
+          <span className='text-gray-400'>|</span>
+          <span className='text-gray-800 font-medium truncate max-w-[150px] md:max-w-none'>{product.title}</span>
+        </div>
+      )}
         <div className="flex flex-col md:flex-row gap-8 md:gap-16">
           {/* Image Gallery */}
           <div className="image-gallery w-full sm:w-5/6 md:w-1/2 lg:w-3/6">
@@ -117,20 +140,41 @@ const Productdetails = () => {
 
             {/* Action Buttons */}
             <div className="action-buttons mb-8 space-y-4">
-              <button className="w-full bg-[#0056D2] text-white py-3 rounded-lg font-medium hover:bg-[#0045b0] transition-colors">
-                Buy Now
+              <button className="w-full bg-[#0056D2] text-white py-3 rounded-[3px] font-medium hover:bg-[#0045b0] transition-colors">
+                Call
               </button>
-              <div className='w-full text-[#0056D2] border border-[#0056D2] py-3 rounded-lg flex items-center justify-center bg-white font-medium hover:bg-gray-50 transition-colors'>
+              <div className='w-full text-[#0056D2] border border-[#0056D2] py-3 rounded-[3px] flex items-center justify-center bg-white font-medium hover:bg-gray-50 transition-colors'>
                 <Link to={`/message`} className="w-full text-center">
                   Message product owner
                 </Link>
               </div>
             </div>
 
+            <div className="my-6 flex items-center space-x-2">
+              <div className="flex -space-x-2 mr-2">
+                <Avatar>
+                    <AvatarImage src={av1} />
+                    <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                    <AvatarImage src={av2} />
+                    <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                    <AvatarImage src={av1} />
+                    <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                    <AvatarImage src={av1} />
+                    <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <span className="relative flex h-8 w-8 font-[600] items-center justify-center rounded-full bg-[#dad1ff]">+7</span>
+              </div>
+              <span className="text-sm text-gray-600">11 other people trust this seller</span>
+            </div>
+
             {/* Additional Info */}
-            <div className="additional-info">
-              <p className="text-sm text-gray-500 mb-4">{product.visits || '1'}) Other people tried this today</p>
-              
+            <div className="additional-info">              
               <div className="benefits-grid grid grid-cols-2 gap-4 mb-4">
                 <div className="benefit-item flex items-center">
                   <span className="mr-2"><IoMdCheckmarkCircleOutline className='text-[1.5rem] text-[#01C014]'/></span>
@@ -173,6 +217,12 @@ const Productdetails = () => {
           <p className='text-[18px] font-[300]'>Borem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <p className='text-[18px] font-[300]'>Borem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <p className='text-[18px] font-[300]'>Borem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <Safetytips />
+        <Comment />
+        <div>
+        <h1 className="font-semibold text-[30px] md:text-[45px] mb-10 text-[#000000] text-center">You may also like</h1>
+          <Relatedsearch />
         </div>
       </div>
     </div>

@@ -6,7 +6,12 @@ const Home = () => {
       <Hero />
       <section className='flex items-center justify-center'><Searchbar /></section>
       <Categories />
-      <Relatedsearch />
+      <div>
+        <div className="text-center">
+          <h1 className="font-semibold text-[32px] md:text-5xl mb-10 text-[#000000]">Related Searches</h1>
+        </div>
+        <Relatedsearch />
+      </div>
       <Trendingproducts />
       <Testimonials />
     </div>
