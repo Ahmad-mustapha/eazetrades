@@ -117,13 +117,13 @@ export const Products = ({category}) => {
             </div>
 
             {/* Product Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-6 lg:px-8 mx-auto">
                 {productData
                     .filter(product => !parentCategory || product.category.toLowerCase() === parentCategory.toLowerCase())
                     .map((product) => (
-                        <Card className="w-full bg-[#FFFFFF] drop-shadow-md shadow-m overflow-hidden rounded-[30px] p-4" key={product.id}>
+                        <Card className="w-full bg-[#FFFFFF] drop-shadow-md shadow-m overflow-hidden rounded-[30px] p-3" key={product.id}>
                             {product.isPremium && (
-                                <span className="absolute top-8 right-8 bg-[#FFFFFF] text-[#5F3AFB] font-bold px-2 py-1 rounded-full text-xs">
+                                <span className="absolute top-4 right-4 bg-[#FFFFFF] text-[#5F3AFB] font-bold px-2 py-1 rounded-full text-[10px]">
                                     Premium Ad
                                 </span>
                             )}
@@ -132,15 +132,15 @@ export const Products = ({category}) => {
                                 width={600}
                                 height={400}
                                 alt={product.title}
-                                className="w-full aspect-[3/2] object-cover rounded-[30px]"
+                                className="w-full aspect-[3/2] object-cover rounded-[25px]"
                             />
-                            <div className="py-4 space-y-2">
+                            <div className="py-3 space-y-2">
                                 <div className="flex items-center justify-between">
                                     <h3 className="text-lg font-semibold text-[#5F3AFB]">{product.category}</h3>
                                     <div className="text-2xl font-bold text-[#000000]">₦{product.price.toLocaleString()}</div>
                                 </div>
                                 <p className="text-[#000000] font-[600] text-xl">{product.title}</p>
-                                <div className="bg-[#F0F0F0] rounded-[20px] p-4 font-[700]">
+                                <div className="bg-[#F0F0F0] rounded-[20px] p-3 font-[700]">
                                     <div className="text-sm text-[#5F3AFB] flex items-center gap-2 mb-2">
                                         <FaLocationDot className="w-4 h-4" />
                                         {product.location}
@@ -150,7 +150,7 @@ export const Products = ({category}) => {
                                         <Link 
                                             to={`/product-details/${product.id}`}
                                             state={{ product }}
-                                            className="bg-[#5F3AFB] w-[80px] sm:w-[100px] text-white px py-2 rounded-[100px] text-[14px] lg:text-[16px] text-center hover:bg-[#4a2ac4] transition-colors"
+                                            className="bg-[#5F3AFB] w-[70px] sm:w-[90px] text-white px py-1 rounded-[100px] text-[12px] lg:text-[14px] text-center hover:bg-[#4a2ac4] transition-colors"
                                         >
                                             Preview
                                         </Link>

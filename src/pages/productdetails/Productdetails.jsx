@@ -63,9 +63,9 @@ const Productdetails = () => {
       <div className="container mx-auto p-4 md:p-8 mt-20">
         <div className="flex flex-col md:flex-row gap-8 md:gap-16">
           {/* Image Gallery */}
-          <div className="image-gallery w-5/6 md:w-1/2 lg:w-2/6">
-            <div className="main-image mb-4 w-full">
-              <img src={mainImage} alt="Main Product" className="w-full h-auto rounded-lg shadow-lg" />
+          <div className="image-gallery w-full sm:w-5/6 md:w-1/2 lg:w-3/6">
+            <div className="main-image rounded-lg mb-4 w-full">
+              <img src={mainImage} alt="Main Product" className="w-full h-auto" />
             </div>
             <div className="thumbnails flex gap-2 overflow-x-auto">
               {images.map((image, index) => (
@@ -81,7 +81,7 @@ const Productdetails = () => {
           </div>
 
           {/* Product Details */}
-          <div className="product-details w-full md:w-1/2 lg:w-4/6">
+          <div className="product-details w-full md:w-1/2 lg:w-3/6">
             {/* Product Title */}
             <h1 className="text-2xl md:text-3xl font-bold mb-4">{product.title}</h1>
             
@@ -175,7 +175,6 @@ const Productdetails = () => {
           <p className='text-[18px] font-[300]'>Borem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
